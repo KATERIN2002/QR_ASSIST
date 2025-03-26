@@ -6,17 +6,33 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+<<<<<<< HEAD
+=======
+  Alert,
+>>>>>>> c7cd200e5527d1a931e6b14b28e2076cebd65dd9
 } from "react-native";
 
 export const LogIn = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigation();
 
   const handleLogin = () => {
     console.log("Correo:", email);
     console.log("Contraseña:", password);
+<<<<<<< HEAD
     navigation.navigate("scanScreen" as never);
+=======
+
+    if (email === "kat@" && password === "123") {
+      navigate.navigate("qrCodeDisplay" as never);
+      return;
+    }
+
+    window.confirm(["login", "Usuario o contraseña incorrectos"].filter(Boolean).join('\n'))
+
+>>>>>>> c7cd200e5527d1a931e6b14b28e2076cebd65dd9
   };
 
   return (
