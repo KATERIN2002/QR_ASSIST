@@ -15,7 +15,7 @@ export const QRCodeDisplay = () => {
         const response = await axios.get(
           "http://localhost:3000/api/qr/generateQR"
         );
-        setQrString(response.data.qrString.trim()); // Limpiar datos
+        setQrString(response.data.url.trim()); // Limpiar datos
       } catch (error) {
         console.error("Error fetching QR code:", error);
       } finally {
