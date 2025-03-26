@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, ActivityIndicator, Text, StyleSheet } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import axios from "axios";
+import { base64Logo } from "./logoBase64";
 // import "../styles.css"
 
 export const QRCodeDisplay = () => {
@@ -44,7 +45,7 @@ export const QRCodeDisplay = () => {
               size={250}
               color="#000"
               backgroundColor="white"
-              logo={{ uri: "https://yourlogo.com/logo.png" }} // Reemplaza con la URL del logo válido
+              logo={{ uri: base64Logo }} // Reemplaza con la URL del logo válido
               logoSize={50}
               logoBackgroundColor="white"
             />

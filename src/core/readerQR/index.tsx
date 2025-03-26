@@ -13,17 +13,10 @@ import {
 import QRCodeScanner from "react-native-qrcode-scanner";
 import { RNCamera } from "react-native-camera";
 
-<<<<<<< HEAD
 export const ScanScreen = () => {
   const onSuccess = (e: any) => {
     Linking.openURL(e?.data).catch((err) =>
       console.error("An error occured", err)
-=======
-class ScanScreen extends Component {
-  onSuccess = (e: any) => {
-    Linking.openURL(e.data).catch(err =>
-      console.error('An error occured', err)
->>>>>>> c7cd200e5527d1a931e6b14b28e2076cebd65dd9
     );
   };
 
