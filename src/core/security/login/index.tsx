@@ -1,13 +1,30 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 
 export const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigation();
 
   const handleLogin = () => {
     console.log("Correo:", email);
     console.log("Contraseña:", password);
+
+    if (email === "kat@" && password === "123") {
+      navigate.navigate("qrCodeDisplay" as never);
+      return;
+    }
+
+    window.confirm(["login", "Usuario o contraseña incorrectos"].filter(Boolean).join('\n'))
+
   };
 
   return (
