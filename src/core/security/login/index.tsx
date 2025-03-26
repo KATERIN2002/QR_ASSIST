@@ -1,13 +1,22 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 export const LogIn = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     console.log("Correo:", email);
     console.log("Contraseña:", password);
+    navigation.navigate("scanScreen" as never);
   };
 
   return (
